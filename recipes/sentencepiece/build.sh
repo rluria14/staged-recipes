@@ -2,22 +2,17 @@
 
 export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig:${PKG_CONFIG_PATH}
 export LD_LIBRARY_PATH=${PREFIX}/lib:${LD_LIBRARY_PATH}
-export INCLUDE=${PREFIX}/lib:${INCLUDE}
 
 mkdir build
 cd build
 
-cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_LIBDIR=${PREFIX}/lib -DCMAKE_INSTALL_INCLUDEDIR=${PREFIX}/include -DCMAKE_AR="${AR}" -DSPM_ENABLE_TCMALLOC=OFF -S ..
+cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_LIBDIR=${PREFIX}/lib -DCMAKE_AR="${AR}" -DSPM_ENABLE_TCMALLOC=OFF -S ..
 
 if [[ "$target_platform" == linux* ]]; then
   make -j $(nproc)
 elif [[ $target_platform == "osx-64" ]]; then
   make -j $(sysctl -n hw.logicalcpu)
 fi
-
-
-
-
 
 make install
 
