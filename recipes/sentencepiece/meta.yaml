@@ -22,6 +22,8 @@ requirements:
     - cmake
     - make  # [unix]
     - gperftools
+    - pkg-config
+    - pkgconfig
   host:
     - pip
     - python
