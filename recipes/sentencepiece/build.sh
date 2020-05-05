@@ -11,9 +11,12 @@ cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_LIBDIR=${PREFIX}/lib -DCM
 if [[ "$target_platform" == linux* ]]; then
   make -j $(nproc)
 elif [[ $target_platform == "osx-64" ]]; then
-  alias nproc="sysctl -n hw.logicalcpu"
-  make -j $(nproc)
+  make -j $(sysctl -n hw.logicalcpu)
 fi
+
+
+
+
 
 make install
 
