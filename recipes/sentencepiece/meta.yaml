@@ -29,8 +29,6 @@ requirements:
     - python
   run:
     - python
-  run_constrained:
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.12") }}  # [osx]
 
 test:
   imports:
