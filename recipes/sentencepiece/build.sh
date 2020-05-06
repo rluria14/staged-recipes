@@ -6,7 +6,11 @@ export LD_LIBRARY_PATH=${PREFIX}/lib:${LD_LIBRARY_PATH}
 mkdir build
 cd build
 
-cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_LIBDIR=${PREFIX}/lib -DCMAKE_AR="${AR}" -DSPM_ENABLE_TCMALLOC=OFF -S ..
+if [[ "$target_platform" == linux* ]]; then
+  cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_LIBDIR=${PREFIX}/lib -DCMAKE_AR="${AR}" -DSPM_ENABLE_TCMALLOC=OFF -S ..
+elif [[ $target_platform == "osx-64" ]]; then
+  cmake .. -DSPM_ENABLE_SHARED=OFF -DSPM_NO_THREADLOCAL=ON
+fi
 
 if [[ "$target_platform" == linux* ]]; then
   make -j $(nproc)
