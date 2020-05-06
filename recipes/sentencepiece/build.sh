@@ -3,11 +3,11 @@
 export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig:${PKG_CONFIG_PATH}
 export LD_LIBRARY_PATH=${PREFIX}/lib:${LD_LIBRARY_PATH}
 
+cd python
 mkdir build
 cd build
 
-cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_LIBDIR=${PREFIX}/lib -DCMAKE_AR="${AR}" -DSPM_ENABLE_TCMALLOC=OFF -S ../third_party
-cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_LIBDIR=${PREFIX}/lib -DCMAKE_AR="${AR}" -DSPM_ENABLE_TCMALLOC=OFF -S ..
+cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_LIBDIR=${PREFIX}/lib -DCMAKE_AR="${AR}" -DSPM_ENABLE_TCMALLOC=OFF -S ../..
 
 if [[ "$target_platform" == linux* ]]; then
   make -j $(nproc)
@@ -23,6 +23,6 @@ elif [[ $target_platform == "osx-64" ]]; then
   update_dyld_shared_cache
 fi
 
-cd ../python
+cd ..
 
 ${PYTHON} -m pip install . -vv

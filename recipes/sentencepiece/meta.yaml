@@ -21,7 +21,7 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - make  # [unix]
-    - gperftools
+    - gperftools  # [unix]
     - pkg-config
     - pkgconfig
   host:
