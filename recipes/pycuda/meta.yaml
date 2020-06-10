@@ -22,11 +22,12 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
-    - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != 'None']
   host:
     - numpy >=1.6
     - pip
     - python
+    - wget
+    - cudatoolkit-dev
   run:
     - appdirs >=1.4.0
     - decorator >=3.2.0
