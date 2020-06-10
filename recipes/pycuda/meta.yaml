@@ -21,7 +21,7 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
-    - {{ compiler('cuda' }}
+    - {{ compiler('cuda') }}
   host:
     - numpy >=1.6
     - pip
