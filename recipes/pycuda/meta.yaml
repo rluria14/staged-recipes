@@ -14,12 +14,14 @@ build:
   number: 0
   skip: True  # [win or osx]
   script:
+    - echo $CUDA_ROOT
     - {{ PYTHON }} configure.py --cuda-root=/usr/local/cuda
     - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ compiler('cuda' }}
   host:
     - numpy >=1.6
     - pip
