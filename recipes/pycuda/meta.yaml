@@ -27,7 +27,6 @@ requirements:
     - pip
     - python
     - wget
-    - perl
     - cudatoolkit-dev
   run:
     - appdirs >=1.4.0
