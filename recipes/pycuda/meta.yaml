@@ -26,7 +26,7 @@ requirements:
     - pip
     - python
     - wget
-    - cudatoolkit-dev
+    - nvcc_linux-64
   run:
     - appdirs >=1.4.0
     - decorator >=3.2.0
