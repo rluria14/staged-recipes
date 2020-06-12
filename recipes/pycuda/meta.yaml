@@ -14,9 +14,8 @@ build:
   number: 0
   skip: True  # [win or osx]
   script:
-    - which nvcc
-    - {{ PYTHON }} configure.py --cuda-root=/usr/local/cuda
-    - {{ PYTHON }} -m pip install . -vv --install-option=--enable-cuda
+    - {{ PYTHON }} configure.py --cuda-root=$PREFIX/cuda
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -26,7 +25,6 @@ requirements:
     - numpy >=1.6
     - pip
     - python
-    - nvcc_linux-64
 
   run:
     - appdirs >=1.4.0
