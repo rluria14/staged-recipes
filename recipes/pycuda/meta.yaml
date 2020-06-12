@@ -25,7 +25,9 @@ requirements:
     - numpy >=1.6
     - pip
     - python
+    - wget
     - cudatoolkit>=10.1
+    - cudatoolkit-dev>=10.1
 
   run:
     - appdirs >=1.4.0
@@ -34,6 +36,8 @@ requirements:
     - python
     - pytools >=2011.2
     - {{ pin_compatible('numpy') }}
+    - cudatoolkit>=10.1
+    - cudatoolkit-dev>=10.1
 
 test:
   imports:
