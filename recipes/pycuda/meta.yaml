@@ -14,11 +14,9 @@ build:
   number: 0
   skip: True  # [win or osx]
   script:
-    - export CUDA_HOME=/usr/local/cuda
-    - export CC=$GCC
-    - export NVCC_FLAGS="--compiler-bindir=${CC}"
+    - ln -s ${CUDA_HOME}/include/* ${CONDA_PREFIX}/include/
     - {{ PYTHON }} configure.py --cuda-root=/usr/local/cuda
-    - {{ PYTHON }} -m pip install . -vv
+    - {{ PYTHON }} -m pip install . -vv --install-option=--enable-cuda
 
 requirements:
   build:
