@@ -14,7 +14,7 @@ build:
   number: 0
   skip: True  # [win or osx]
   script:
-    - {{ PYTHON }} configure.py --cuda-root=$PREFIX/cuda
+    - {{ PYTHON }} configure.py --cuda-root=/usr/local/cuda
     - {{ PYTHON }} -m pip install . -vv
 
 requirements:
