@@ -14,9 +14,7 @@ build:
   number: 0
   skip: True  # [win or osx]
   script:
-    - export CUDA_HOME=/usr/local/cuda
-    - export PATH=/usr/local/cuda/bin:$PATH
-    - ln -s ${CUDA_HOME}/include/* ${CONDA_PREFIX}/include/
+    - export CUDA_INC_DIR=/usr/local/cuda
     - {{ PYTHON }} configure.py --cuda-root=/usr/local/cuda
     - {{ PYTHON }} -m pip install . -vv --install-option=--enable-cuda
 
@@ -24,11 +22,11 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ compiler('cuda') }}
   host:
     - numpy >=1.6
     - pip
     - python
-    - nvcc_linux-64
 
   run:
     - appdirs >=1.4.0
