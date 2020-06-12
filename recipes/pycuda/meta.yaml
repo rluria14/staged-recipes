@@ -22,11 +22,11 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - {{ compiler('cuda') }}
   host:
     - numpy >=1.6
     - pip
     - python
+    - nvcc_linux-64
 
   run:
     - appdirs >=1.4.0
