@@ -23,12 +23,14 @@ requirements:
     - make  # [unix]
     - gperftools  # [unix]
     - pkg-config
-    - pkgconfig
   host:
     - pip
     - python
+    - setuptools
+    - libprotobuf
   run:
     - python
+    - libprotobuf
 
 test:
   imports:
