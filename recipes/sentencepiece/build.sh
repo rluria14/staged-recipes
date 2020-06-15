@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
-#mkdir build
-#cd build
-#cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} .. -DSPM_BUILD_TEST=ON -DSPM_ENABLE_TENSORFLOW_SHARED=ON -DCMAKE_AR=$GCC_AR -DSPM_USE_BUILTIN_PROTOBUF=OFF
-#make -j $(nproc)
-#
-#export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig:${PKG_CONFIG_PATH}
-#export LD_LIBRARY_PATH=${PREFIX}/lib:${LD_LIBRARY_PATH}
-#make install
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} .. -DSPM_BUILD_TEST=ON -DSPM_ENABLE_TENSORFLOW_SHARED=ON -DCMAKE_AR=$GCC_AR -DSPM_USE_BUILTIN_PROTOBUF=OFF
+make -j $(nproc)
+
+export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig:${PKG_CONFIG_PATH}
+export LD_LIBRARY_PATH=${PREFIX}/lib:${LD_LIBRARY_PATH}
+make install
+ldconfig -v
 
 
 #if [[ "$target_platform" == linux* ]]; then
@@ -24,6 +25,6 @@
 #  update_dyld_shared_cache
 #fi
 
-cd python
+cd ../python
 
 python setup.py install
