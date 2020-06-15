@@ -27,10 +27,10 @@ requirements:
     - pip
     - python
     - setuptools
-    - libprotobuf ==3.8.0
+    - libprotobuf
   run:
     - python
-    - libprotobuf ==3.8.0
+    - libprotobuf
 
 test:
   imports:
