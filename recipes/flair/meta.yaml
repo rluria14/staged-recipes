@@ -20,7 +20,7 @@ requirements:
     - pip
     - python >=3.6
   run:
-    - bpemb >=0.2.9
+    - bpemb
     - deprecated >=1.2.4
     - gensim >=3.4.0
     - hyperopt >=0.1.1
@@ -38,7 +38,7 @@ requirements:
     - tabulate
     - pytorch >=1.1.0
     - tqdm >=4.26.0
-    - transformers >=3.0.0
+    - transformers
 
 test:
   imports:
