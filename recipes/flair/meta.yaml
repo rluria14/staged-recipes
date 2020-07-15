@@ -1,0 +1,57 @@
+{% set name = "flair" %}
+{% set version = "0.5.1" %}
+
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 05112dc7dbe2a4384f0cae82a63a5778cf6077ad6d65327fd7f9ec254cfe7aef
+
+build:
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python >=3.6
+  run:
+    - bpemb >=0.2.9
+    - deprecated >=1.2.4
+    - gensim >=3.4.0
+    - hyperopt >=0.1.1
+    - langdetect
+    - matplotlib >=2.2.3
+    - mpld3
+    - pytest >=5.3.2
+    - python >=3.6
+    - python-dateutil >=2.6.1
+    - regex
+    - scikit-learn >=0.21.3
+    - segtok >=1.5.7
+    - sentencepiece
+    - sqlitedict >=1.6.0
+    - tabulate
+    - pytorch >=1.1.0
+    - tqdm >=4.26.0
+    - transformers >=3.0.0
+
+test:
+  imports:
+    - flair
+
+about:
+  home: https://pypi.org/project/flair/
+  summary: A very simple framework for state-of-the-art NLP
+  license: MIT
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - rluria14
+    - oblute
+    - ndmaxar
