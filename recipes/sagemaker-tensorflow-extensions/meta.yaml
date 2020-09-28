@@ -12,14 +12,15 @@ source:
 build:
   number: 0
   skip: True  # [not linux]
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    - export CMAKE_CXX_COMPILER=$CXX
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
-    - make
   host:
     - pip
     - python
