@@ -22,6 +22,7 @@ requirements:
     - pip
     - python
     - tensorflow
+    - wheel
     - cpplint
   run:
     - python
