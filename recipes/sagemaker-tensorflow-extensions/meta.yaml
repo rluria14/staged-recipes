@@ -13,8 +13,8 @@ build:
   number: 0
   skip: True  # [not linux]
   script:
-    - export CXX=g++
-    - export CC=gcc
+    - export CXX=g++-5
+    - export CC=gcc-5
     - {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -24,12 +24,12 @@ requirements:
     - cmake
   host:
     - pip
-    - python
+    - python ==3.6
     - tensorflow
     - wheel
     - cpplint
   run:
-    - python
+    - python ==3.6
 
 test:
   imports:
