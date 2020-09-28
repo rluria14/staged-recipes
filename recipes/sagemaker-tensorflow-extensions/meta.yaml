@@ -11,6 +11,7 @@ source:
 
 build:
   number: 0
+  skip: True  # [not linux]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -18,6 +19,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
+    - make
   host:
     - pip
     - python
