@@ -27,7 +27,7 @@ aclocal && autoconf && autoheader && automake --add-missing --copy
   --with-coverage \
   --with-uitests \
   PYTHON_NOVERSIONCHECK="True" \
-  PYTHON_VERSION="${PY_VER}"
+  PYTHON_VERSION="2.4.0"
 
 
 if [ ! -f LocalConfig.pri ] && ! grep --quiet QMAKE_CXX LocalConfig.pri; then
