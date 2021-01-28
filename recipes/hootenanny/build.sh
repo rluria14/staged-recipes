@@ -9,6 +9,7 @@
 #### Temp change until we get the C++11 support into develop
 #cd $HOOT_HOME
 
+export CXXFLAGS="$CXXFLAGS -std=c++11"
 
 echo "SetupEnv.sh"
 source ./SetupEnv.sh
