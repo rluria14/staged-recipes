@@ -25,7 +25,9 @@ aclocal && autoconf && autoheader && automake --add-missing --copy
   --with-services \
   --with-coverage \
   --with-uitests \
-  PYTHON_NOVERSIONCHECK="True"
+  PYTHON_NOVERSIONCHECK="True" \
+  PYTHON_VERSION="${PY_VER}"
+
 
 if [ ! -f LocalConfig.pri ] && ! grep --quiet QMAKE_CXX LocalConfig.pri; then
     echo 'Customizing LocalConfig.pri...'
