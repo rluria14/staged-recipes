@@ -25,7 +25,7 @@ aclocal && autoconf && autoheader && automake --add-missing --copy
   --with-rnd \
   --with-services \
   --with-coverage \
-  --with-uitetests
+  --with-uitests
 
 if [ ! -f LocalConfig.pri ] && ! grep --quiet QMAKE_CXX LocalConfig.pri; then
     echo 'Customizing LocalConfig.pri...'
