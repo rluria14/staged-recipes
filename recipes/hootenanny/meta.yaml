@@ -17,6 +17,7 @@ requirements:
     - {{ compiler('cxx') }}
     - automake
     - autoconf
+    - autoconf-archive
     - libtool
   host:
     - pip
