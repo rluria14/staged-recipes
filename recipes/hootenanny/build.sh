@@ -9,7 +9,7 @@
 #### Temp change until we get the C++11 support into develop
 #cd $HOOT_HOME
 
-export CXXFLAGS="$CXXFLAGS -std=c++11"
+#export CXXFLAGS="$CXXFLAGS -std=c++11"
 
 echo "SetupEnv.sh"
 source ./SetupEnv.sh
@@ -20,7 +20,7 @@ if [ -f missing ]; then
 fi
 
 ### configure
-aclocal && autoconf && autoheader && automake --add-missing --copy
+aclocal && autoreconf -f && autoheader && automake --add-missing --copy
 
 ./configure \
   --with-rnd \
