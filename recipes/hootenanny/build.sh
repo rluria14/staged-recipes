@@ -19,13 +19,14 @@ fi
 echo "PYTHON VERSION CHECK CHECK CHECK : ${PY_VER}"
 
 ### configure
-aclocal && autoconf && autoheader && automake --add-missing --copy --enable-python
+aclocal && autoconf && autoheader && automake --add-missing --copy
 
 ./configure \
   --with-rnd \
   --with-services \
   --with-coverage \
   --with-uitests \
+  --enable-python \
   PYTHON_NOVERSIONCHECK="True"
 
 
