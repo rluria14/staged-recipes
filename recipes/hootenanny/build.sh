@@ -27,7 +27,7 @@ aclocal && autoconf && autoheader && automake --add-missing --copy
   --with-services \
   --with-coverage \
   --with-uitests \
-  PYTHON_VERSION="$PYTHON_VERSION ${PY_VER}" \
+  PYTHON_VERSION="python${PY_VER}" \
   PYTHON_NOVERSIONCHECK="True"
 
 
