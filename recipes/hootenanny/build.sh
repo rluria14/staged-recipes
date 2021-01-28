@@ -18,6 +18,7 @@ if [ -f missing ]; then
 fi
 echo "PYTHON VERSION CHECK CHECK CHECK : ${PY_VER}"
 
+
 ### configure
 aclocal && autoconf && autoheader && automake --add-missing --copy
 
@@ -26,7 +27,7 @@ aclocal && autoconf && autoheader && automake --add-missing --copy
   --with-services \
   --with-coverage \
   --with-uitests \
-  --enable-python \
+  PYTHON_VERSION="$PYTHON_VERSION ${PY_VER}" \
   PYTHON_NOVERSIONCHECK="True"
 
 
