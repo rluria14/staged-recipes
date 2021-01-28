@@ -19,15 +19,14 @@ fi
 echo "PYTHON VERSION CHECK CHECK CHECK : ${PY_VER}"
 
 ### configure
-aclocal && autoconf && autoheader && automake --add-missing --copy
+aclocal && autoconf && autoheader && automake --add-missing --copy --enable-python
 
 ./configure \
   --with-rnd \
   --with-services \
   --with-coverage \
   --with-uitests \
-  PYTHON_NOVERSIONCHECK="True" \
-  PYTHON_VERSION="2.4.0"
+  PYTHON_NOVERSIONCHECK="True"
 
 
 if [ ! -f LocalConfig.pri ] && ! grep --quiet QMAKE_CXX LocalConfig.pri; then
