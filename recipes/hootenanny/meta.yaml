@@ -1,0 +1,42 @@
+{% set name = "hootenanny" %}
+{% set version = "0.2.58" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/ngageoint/hootenanny/archive/v{{ version }}.tar.gz
+  sha256: 43ef1fed52f652a8d68126d9965d5143f1f2116e7be14ee48b3af3b84c3b8848
+build:
+  number: 0
+  skip: True  # [osx]
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - pip
+    - python
+    - make
+    - maven
+  requires:
+    - python
+
+test:
+  commands:
+    - hoot help conflate
+
+about:
+  home: https://github.com/ngageoint/hootenanny
+  license: GPL-3.0
+  license_file: LICENSE
+  summary: Open source map data conflation tool developed with machine learning techniques to facilitate automated and semi-automated conflation of critical Foundation GEOINT features in the topographic domain.
+  doc_url: https://github.com/ngageoint/hootenanny
+  dev_url: https://github.com/ngageoint/hootenanny
+
+extra:
+  recipe-maintainers:
+    - rluria14
+    - oblute
