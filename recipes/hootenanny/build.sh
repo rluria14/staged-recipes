@@ -16,6 +16,7 @@ source ./SetupEnv.sh
 if [ -f missing ]; then
   rm -f missing
 fi
+echo "PYTHON VERSION CHECK CHECK CHECK : ${PY_VER}"
 
 ### configure
 aclocal && autoconf && autoheader && automake --add-missing --copy
