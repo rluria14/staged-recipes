@@ -28,7 +28,7 @@ requirements:
 
 test:
   commands:
-    - hoot help conflate
+    - hoot version
 
 about:
   home: https://github.com/ngageoint/hootenanny
