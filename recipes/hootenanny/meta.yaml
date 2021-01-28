@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ngageoint/hootenanny/archive/v{{ version }}.tar.gz
-  sha256: 43ef1fed52f652a8d68126d9965d5143f1f2116e7be14ee48b3af3b84c3b8848
+  sha256: 4dae2a25296c987dd63c777c92b64a817fb357b0273c103018ac30f382aa6d8e
 build:
   number: 0
   skip: True  # [osx]
