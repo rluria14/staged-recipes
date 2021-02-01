@@ -16,7 +16,7 @@ source ./SetupEnv.sh
 if [ -f missing ]; then
   rm -f missing
 fi
-echo "PYTHON VERSION CHECK CHECK CHECK : '%u.%u' % ${PY_VER}[:2]"
+echo "PYTHON VERSION CHECK CHECK CHECK : ${PY_VER}"
 
 
 ### configure
@@ -27,7 +27,7 @@ aclocal && autoconf && autoheader && automake --add-missing --copy
   --with-services \
   --with-coverage \
   --with-uitests \
-  PYTHON_VERSION="'%u.%u' % ${PY_VER}[:2]" \
+  PYTHON_VERSION="'${PY_VER}'" \
   PYTHON_NOVERSIONCHECK="True"
 
 
