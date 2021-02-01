@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/ngageoint/hootenanny/archive/v{{ version }}.tar.gz
   sha256: 4dae2a25296c987dd63c777c92b64a817fb357b0273c103018ac30f382aa6d8e
+  patches:
+    - pythonm4.patch
 build:
   number: 0
   skip: True  # [osx]
