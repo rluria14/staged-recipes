@@ -17,7 +17,8 @@ if [ -f missing ]; then
   rm -f missing
 fi
 echo "PYTHON VERSION CHECK CHECK CHECK : ${PY_VER}"
-
+python-v = $(python -c 'import sys; print(sys.version_info[:])')
+echo "detect python version: ${python-v}"
 
 ### configure
 aclocal && autoconf && autoheader && automake --add-missing --copy
@@ -27,7 +28,7 @@ aclocal && autoconf && autoheader && automake --add-missing --copy
   --with-services \
   --with-coverage \
   --with-uitests \
-  PYTHON_VERSION="'${PY_VER}'" \
+  PYTHON_VERSION="${PY_VER}" \
   PYTHON_NOVERSIONCHECK="True"
 
 
