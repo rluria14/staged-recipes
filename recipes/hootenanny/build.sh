@@ -17,19 +17,19 @@ if [ -f missing ]; then
   rm -f missing
 fi
 echo "PYTHON VERSION CHECK CHECK CHECK : ${PY_VER}"
-python-v = $(python -c 'import sys; print(sys.version_info[:])')
-echo "detect python version: ${python-v}"
+python_v=$(python -c 'import sys; print(sys.version_info[:])')
+echo "detect python version: $python_v"
 
 ### configure
-aclocal && autoconf && autoheader && automake --add-missing --copy
+aclocal && autoconf && autoheader && automake --add-missing --copy && ./configure --with-rnd --with-josm --with-services --with-uitests
 
-./configure \
-  --with-rnd \
-  --with-services \
-  --with-coverage \
-  --with-uitests \
-  PYTHON_VERSION="${PY_VER}" \
-  PYTHON_NOVERSIONCHECK="True"
+#./configure \
+#  --with-rnd \
+#  --with-services \
+#  --with-coverage \
+#  --with-uitests \
+#  PYTHON_VERSION="${PY_VER}" \
+#  PYTHON_NOVERSIONCHECK="True"
 
 
 if [ ! -f LocalConfig.pri ] && ! grep --quiet QMAKE_CXX LocalConfig.pri; then
